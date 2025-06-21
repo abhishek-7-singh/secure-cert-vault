@@ -1,11 +1,55 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import LoginForm from "@/components/auth/LoginForm";
+import Header from "@/components/layout/Header";
+import Sidebar from "@/components/layout/Sidebar";
+import UserDashboard from "@/components/dashboard/UserDashboard";
+import AdminDashboard from "@/components/dashboard/AdminDashboard";
+
+interface User {
+  name: string;
+  email: string;
+  role: 'user' | 'admin';
+}
 
 const Index = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const [activeTab, setActiveTab] = useState('dashboard');
+
+  const handleLogin = (userData: User) => {
+    setUser(userData);
+    setActiveTab('dashboard');
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setActiveTab('dashboard');
+  };
+
+  if (!user) {
+    return <LoginForm onLogin={handleLogin} />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-50">
+      <Header user={user} onLogout={handleLogout} />
+      
+      <div className="flex h-[calc(100vh-64px)]">
+        <Sidebar 
+          userRole={user.role} 
+          activeTab={activeTab} 
+          onTabChange={setActiveTab} 
+        />
+        
+        <main className="flex-1 overflow-auto">
+          <div className="p-6">
+            {user.role === 'admin' ? (
+              <AdminDashboard activeTab={activeTab} />
+            ) : (
+              <UserDashboard user={user} />
+            )}
+          </div>
+        </main>
       </div>
     </div>
   );
