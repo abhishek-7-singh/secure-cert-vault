@@ -8,13 +8,13 @@
 @layer base {
   :root {
     --background: 88 28 135; /* purple-800 */
-    --foreground: 255 255 255; /* white */
+    --foreground: 0 0 0; /* black */
 
     --card: 139 69 19; /* purple-700 */
-    --card-foreground: 255 255 255; /* white */
+    --card-foreground: 0 0 0; /* black */
 
-    --popover: 139 69 19; /* purple-700 */
-    --popover-foreground: 255 255 255; /* white */
+    --popover: 255 255 255; /* white */
+    --popover-foreground: 0 0 0; /* black */
 
     --primary: 255 255 255; /* white */
     --primary-foreground: 88 28 135; /* purple-800 */
@@ -22,8 +22,8 @@
     --secondary: 126 34 206; /* purple-700 */
     --secondary-foreground: 255 255 255; /* white */
 
-    --muted: 126 34 206; /* purple-700 */
-    --muted-foreground: 216 180 254; /* purple-200 */
+    --muted: 243 244 246; /* gray-100 */
+    --muted-foreground: 0 0 0; /* black */
 
     --accent: 255 255 255; /* white */
     --accent-foreground: 88 28 135; /* purple-800 */
@@ -32,7 +32,7 @@
     --destructive-foreground: 255 255 255;
 
     --border: 147 51 234; /* purple-600 */
-    --input: 147 51 234; /* purple-600 */
+    --input: 255 255 255; /* white */
     --ring: 255 255 255; /* white */
 
     --radius: 0.5rem;
@@ -104,7 +104,7 @@
   }
   
   .certificate-card {
-    @apply bg-card rounded-lg shadow-sm border border-purple-600 hover:shadow-md transition-all duration-200 hover:border-white;
+    @apply bg-white rounded-lg shadow-sm border border-purple-600 hover:shadow-md transition-all duration-200 hover:border-purple-800;
   }
   
   .document-icon {

@@ -47,24 +47,24 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
           <div className="flex justify-center">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center">
               <Shield className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">SecureVault</h1>
+          <h1 className="text-2xl font-bold text-black">SecureVault</h1>
           <p className="text-gray-600">Digital Certificate Repository</p>
         </div>
 
         {/* Login Form */}
-        <Card className="border-0 shadow-xl">
+        <Card className="border-0 shadow-xl bg-white">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl text-center">Sign in</CardTitle>
-            <CardDescription className="text-center">
+            <CardTitle className="text-2xl text-center text-black">Sign in</CardTitle>
+            <CardDescription className="text-center text-gray-600">
               Enter your credentials to access your account
             </CardDescription>
           </CardHeader>
@@ -78,7 +78,7 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
               <TabsContent value="user" className="space-y-4 mt-4">
                 <form onSubmit={(e) => handleSubmit(e, 'user')} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="user-email">Email</Label>
+                    <Label htmlFor="user-email" className="text-black">Email</Label>
                     <Input
                       id="user-email"
                       type="email"
@@ -86,10 +86,11 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
+                      className="text-black"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="user-password">Password</Label>
+                    <Label htmlFor="user-password" className="text-black">Password</Label>
                     <Input
                       id="user-password"
                       type="password"
@@ -97,6 +98,7 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
+                      className="text-black"
                     />
                   </div>
                   <Button type="submit" className="w-full" disabled={isLoading}>
@@ -115,7 +117,7 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
               <TabsContent value="admin" className="space-y-4 mt-4">
                 <form onSubmit={(e) => handleSubmit(e, 'admin')} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="admin-email">Admin Email</Label>
+                    <Label htmlFor="admin-email" className="text-black">Admin Email</Label>
                     <Input
                       id="admin-email"
                       type="email"
@@ -123,10 +125,11 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
+                      className="text-black"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="admin-password">Admin Password</Label>
+                    <Label htmlFor="admin-password" className="text-black">Admin Password</Label>
                     <Input
                       id="admin-password"
                       type="password"
@@ -134,6 +137,7 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
+                      className="text-black"
                     />
                   </div>
                   <Button type="submit" className="w-full bg-red-600 hover:bg-red-700" disabled={isLoading}>
@@ -153,10 +157,10 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
         </Card>
 
         {/* Demo credentials */}
-        <Card className="border border-blue-200 bg-blue-50">
+        <Card className="border border-purple-200 bg-purple-50">
           <CardContent className="pt-4">
-            <h3 className="font-semibold text-blue-900 mb-2">Demo Credentials</h3>
-            <div className="text-sm text-blue-800 space-y-1">
+            <h3 className="font-semibold text-purple-900 mb-2">Demo Credentials</h3>
+            <div className="text-sm text-purple-800 space-y-1">
               <p><strong>User:</strong> user@demo.com / password123</p>
               <p><strong>Admin:</strong> admin@demo.com / admin123</p>
             </div>

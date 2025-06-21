@@ -104,49 +104,49 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card className="bg-card border-purple-600">
+        <Card className="bg-white border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <FileText className="h-8 w-8 text-white" />
+              <FileText className="h-8 w-8 text-purple-600" />
               <div>
-                <p className="text-2xl font-bold text-white">{certificates.length}</p>
-                <p className="text-sm text-purple-200">Total Documents</p>
+                <p className="text-2xl font-bold text-black">{certificates.length}</p>
+                <p className="text-sm text-gray-600">Total Documents</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card className="bg-card border-purple-600">
+        <Card className="bg-white border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <FileText className="h-8 w-8 text-green-400" />
+              <FileText className="h-8 w-8 text-green-600" />
               <div>
-                <p className="text-2xl font-bold text-white">{certificates.filter(c => c.status === 'active').length}</p>
-                <p className="text-sm text-purple-200">Active Documents</p>
+                <p className="text-2xl font-bold text-black">{certificates.filter(c => c.status === 'active').length}</p>
+                <p className="text-sm text-gray-600">Active Documents</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card className="bg-card border-purple-600">
+        <Card className="bg-white border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Calendar className="h-8 w-8 text-orange-400" />
+              <Calendar className="h-8 w-8 text-orange-600" />
               <div>
-                <p className="text-2xl font-bold text-white">0</p>
-                <p className="text-sm text-purple-200">Expiring Soon</p>
+                <p className="text-2xl font-bold text-black">0</p>
+                <p className="text-sm text-gray-600">Expiring Soon</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card className="bg-card border-purple-600">
+        <Card className="bg-white border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Download className="h-8 w-8 text-indigo-400" />
+              <Download className="h-8 w-8 text-indigo-600" />
               <div>
-                <p className="text-2xl font-bold text-white">23</p>
-                <p className="text-sm text-purple-200">Downloads</p>
+                <p className="text-2xl font-bold text-black">23</p>
+                <p className="text-sm text-gray-600">Downloads</p>
               </div>
             </div>
           </CardContent>
@@ -154,16 +154,16 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
       </div>
 
       {/* Documents Section */}
-      <Card className="bg-card border-purple-600">
+      <Card className="bg-white border-purple-600">
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="text-white">Your Issued Documents</CardTitle>
-              <CardDescription className="text-purple-200">
+              <CardTitle className="text-black">Your Issued Documents</CardTitle>
+              <CardDescription className="text-gray-600">
                 View and download your verified certificates
               </CardDescription>
             </div>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-purple-800">
+            <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white">
               View All ({certificates.length})
             </Button>
           </div>
@@ -173,33 +173,33 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
             {certificates.map((cert) => (
               <div 
                 key={cert.id} 
-                className="certificate-card p-4 flex items-center justify-between hover:bg-purple-800/50 transition-colors"
+                className="certificate-card p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
                 <div className="flex items-center space-x-4">
                   <div className="document-icon">
                     <FileText className="h-6 w-6" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-white">{cert.name}</h3>
-                    <p className="text-sm text-purple-200">{cert.issuedBy}</p>
+                    <h3 className="font-semibold text-black">{cert.name}</h3>
+                    <p className="text-sm text-gray-600">{cert.issuedBy}</p>
                     <div className="flex items-center space-x-2 mt-1">
                       <Badge className={getTypeColor(cert.type)}>{cert.type}</Badge>
                       <Badge className={getStatusColor(cert.status)}>{cert.status}</Badge>
-                      <span className="text-xs text-purple-300">
+                      <span className="text-xs text-gray-500">
                         Issued: {new Date(cert.issuedDate).toLocaleDateString()}
                       </span>
-                      <span className="text-xs text-purple-300">
+                      <span className="text-xs text-gray-500">
                         Size: {cert.fileSize}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-purple-800">
+                  <Button variant="outline" size="sm" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white">
                     <Eye className="h-4 w-4 mr-1" />
                     View
                   </Button>
-                  <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-purple-800">
+                  <Button variant="outline" size="sm" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white">
                     <Download className="h-4 w-4 mr-1" />
                     Download
                   </Button>
