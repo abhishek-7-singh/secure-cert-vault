@@ -63,13 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Government-style colors
+				// Government-style colors updated to purple theme
 				gov: {
-					blue: '#1e40af',
-					darkblue: '#1e3a8a',
-					orange: '#ea580c',
-					green: '#16a34a',
-					red: '#dc2626',
+					purple: '#7c3aed',
+					darkpurple: '#5b21b6',
+					white: '#ffffff',
+					lightpurple: '#a855f7',
 					gray: '#64748b'
 				}
 			},

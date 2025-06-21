@@ -34,7 +34,7 @@ const Sidebar = ({ userRole, activeTab, onTabChange }: SidebarProps) => {
   const menuItems = userRole === 'admin' ? adminMenuItems : userMenuItems;
 
   return (
-    <div className="w-64 bg-white border-r border-gray-200 h-full">
+    <div className="w-64 bg-purple-800 border-r border-purple-600 h-full">
       <div className="p-4">
         <nav className="space-y-2">
           {menuItems.map((item) => {
@@ -44,8 +44,8 @@ const Sidebar = ({ userRole, activeTab, onTabChange }: SidebarProps) => {
                 key={item.id}
                 variant={activeTab === item.id ? "default" : "ghost"}
                 className={cn(
-                  "w-full justify-start",
-                  activeTab === item.id && "bg-blue-600 text-white hover:bg-blue-700"
+                  "w-full justify-start text-white hover:bg-purple-700",
+                  activeTab === item.id && "bg-white text-purple-800 hover:bg-gray-100"
                 )}
                 onClick={() => onTabChange(item.id)}
               >

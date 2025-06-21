@@ -75,9 +75,9 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
 
   const getTypeColor = (type: string) => {
     const colors: { [key: string]: string } = {
-      'Identity Proof': 'bg-blue-100 text-blue-800',
+      'Identity Proof': 'bg-purple-100 text-purple-800',
       'Tax Document': 'bg-green-100 text-green-800',
-      'Education': 'bg-purple-100 text-purple-800',
+      'Education': 'bg-indigo-100 text-indigo-800',
       'License': 'bg-orange-100 text-orange-800',
     };
     return colors[type] || 'bg-gray-100 text-gray-800';
@@ -95,58 +95,58 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
   return (
     <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white">
+      <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-6 text-white">
         <h1 className="text-2xl font-bold mb-2">Welcome, {user.name}!</h1>
-        <p className="text-blue-100">
+        <p className="text-purple-100">
           SecureVault 'Issued Documents' are at par with original documents as per IT ACT, 2000
         </p>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card>
+        <Card className="bg-card border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <FileText className="h-8 w-8 text-blue-600" />
+              <FileText className="h-8 w-8 text-white" />
               <div>
-                <p className="text-2xl font-bold">{certificates.length}</p>
-                <p className="text-sm text-gray-600">Total Documents</p>
+                <p className="text-2xl font-bold text-white">{certificates.length}</p>
+                <p className="text-sm text-purple-200">Total Documents</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="bg-card border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <FileText className="h-8 w-8 text-green-600" />
+              <FileText className="h-8 w-8 text-green-400" />
               <div>
-                <p className="text-2xl font-bold">{certificates.filter(c => c.status === 'active').length}</p>
-                <p className="text-sm text-gray-600">Active Documents</p>
+                <p className="text-2xl font-bold text-white">{certificates.filter(c => c.status === 'active').length}</p>
+                <p className="text-sm text-purple-200">Active Documents</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="bg-card border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Calendar className="h-8 w-8 text-orange-600" />
+              <Calendar className="h-8 w-8 text-orange-400" />
               <div>
-                <p className="text-2xl font-bold">0</p>
-                <p className="text-sm text-gray-600">Expiring Soon</p>
+                <p className="text-2xl font-bold text-white">0</p>
+                <p className="text-sm text-purple-200">Expiring Soon</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="bg-card border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Download className="h-8 w-8 text-purple-600" />
+              <Download className="h-8 w-8 text-indigo-400" />
               <div>
-                <p className="text-2xl font-bold">23</p>
-                <p className="text-sm text-gray-600">Downloads</p>
+                <p className="text-2xl font-bold text-white">23</p>
+                <p className="text-sm text-purple-200">Downloads</p>
               </div>
             </div>
           </CardContent>
@@ -154,16 +154,16 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
       </div>
 
       {/* Documents Section */}
-      <Card>
+      <Card className="bg-card border-purple-600">
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle>Your Issued Documents</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-white">Your Issued Documents</CardTitle>
+              <CardDescription className="text-purple-200">
                 View and download your verified certificates
               </CardDescription>
             </div>
-            <Button variant="outline">
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-purple-800">
               View All ({certificates.length})
             </Button>
           </div>
@@ -173,33 +173,33 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
             {certificates.map((cert) => (
               <div 
                 key={cert.id} 
-                className="certificate-card p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="certificate-card p-4 flex items-center justify-between hover:bg-purple-800/50 transition-colors"
               >
                 <div className="flex items-center space-x-4">
-                  <div className="document-icon bg-blue-600">
+                  <div className="document-icon">
                     <FileText className="h-6 w-6" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">{cert.name}</h3>
-                    <p className="text-sm text-gray-600">{cert.issuedBy}</p>
+                    <h3 className="font-semibold text-white">{cert.name}</h3>
+                    <p className="text-sm text-purple-200">{cert.issuedBy}</p>
                     <div className="flex items-center space-x-2 mt-1">
                       <Badge className={getTypeColor(cert.type)}>{cert.type}</Badge>
                       <Badge className={getStatusColor(cert.status)}>{cert.status}</Badge>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-purple-300">
                         Issued: {new Date(cert.issuedDate).toLocaleDateString()}
                       </span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-purple-300">
                         Size: {cert.fileSize}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-purple-800">
                     <Eye className="h-4 w-4 mr-1" />
                     View
                   </Button>
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-purple-800">
                     <Download className="h-4 w-4 mr-1" />
                     Download
                   </Button>
