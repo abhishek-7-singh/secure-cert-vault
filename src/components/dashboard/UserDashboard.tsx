@@ -87,7 +87,7 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
     const colors: { [key: string]: string } = {
       'active': 'bg-purple-100 text-purple-700',
       'expired': 'bg-red-100 text-red-800',
-      'pending': 'bg-yellow-100 text-yellow-800',
+      'pending': 'bg-white-100 text-yellow-800',
     };
     return colors[status] || 'bg-gray-100 text-gray-800';
   };

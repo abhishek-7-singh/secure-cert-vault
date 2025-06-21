@@ -1,89 +1,86 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
 @layer base {
   :root {
-    --background: 88 28 135; /* purple-800 */
-    --foreground: 0 0 0; /* black */
+    --background: 252 100% 98%; /* light purple background */
+    --foreground: 252 20% 20%;  /* dark text */
 
-    --card: 139 69 19; /* purple-700 */
-    --card-foreground: 0 0 0; /* black */
+    --card: 252 100% 97%; 
+    --card-foreground: 252 20% 20%;
 
-    --popover: 255 255 255; /* white */
-    --popover-foreground: 0 0 0; /* black */
+    --popover: 252 100% 97%;
+    --popover-foreground: 252 20% 20%;
 
-    --primary: 255 255 255; /* white */
-    --primary-foreground: 88 28 135; /* purple-800 */
+    --primary: 252 83% 58%; /* main purple */
+    --primary-foreground: 0 0% 100%; /* white text on purple */
 
-    --secondary: 126 34 206; /* purple-700 */
-    --secondary-foreground: 255 255 255; /* white */
+    --secondary: 252 100% 90%;
+    --secondary-foreground: 252 30% 30%;
 
-    --muted: 243 244 246; /* gray-100 */
-    --muted-foreground: 0 0 0; /* black */
+    --muted: 252 80% 95%;
+    --muted-foreground: 252 30% 40%;
 
-    --accent: 255 255 255; /* white */
-    --accent-foreground: 88 28 135; /* purple-800 */
+    --accent: 252 100% 92%;
+    --accent-foreground: 252 30% 40%;
 
-    --destructive: 220 38 38;
-    --destructive-foreground: 255 255 255;
+    --destructive: 0 80% 50%;  /* red */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 147 51 234; /* purple-600 */
-    --input: 255 255 255; /* white */
-    --ring: 255 255 255; /* white */
+    --border: 252 60% 80%;
+    --input: 252 100% 98%;
+    --ring: 252 83% 58%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 107 33 168; /* purple-800 */
-    --sidebar-foreground: 255 255 255; /* white */
-    --sidebar-primary: 255 255 255; /* white */
-    --sidebar-primary-foreground: 88 28 135; /* purple-800 */
-    --sidebar-accent: 126 34 206; /* purple-700 */
-    --sidebar-accent-foreground: 255 255 255; /* white */
-    --sidebar-border: 147 51 234; /* purple-600 */
-    --sidebar-ring: 255 255 255; /* white */
+    --sidebar-background: 252 83% 20%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 252 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 252 83% 40%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 252 60% 80%;
+    --sidebar-ring: 252 83% 58%;
   }
 
   .dark {
-    --background: 88 28 135; /* purple-800 */
-    --foreground: 255 255 255; /* white */
+    --background: 252 83% 10%;
+    --foreground: 0 0% 100%;
 
-    --card: 126 34 206; /* purple-700 */
-    --card-foreground: 255 255 255; /* white */
+    --card: 252 83% 15%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 126 34 206; /* purple-700 */
-    --popover-foreground: 255 255 255; /* white */
+    --popover: 252 83% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 255 255 255; /* white */
-    --primary-foreground: 88 28 135; /* purple-800 */
+    --primary: 252 83% 58%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 107 33 168; /* purple-800 */
-    --secondary-foreground: 255 255 255; /* white */
+    --secondary: 252 83% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 107 33 168; /* purple-800 */
-    --muted-foreground: 196 181 253; /* purple-300 */
+    --muted: 252 83% 20%;
+    --muted-foreground: 252 30% 70%;
 
-    --accent: 255 255 255; /* white */
-    --accent-foreground: 88 28 135; /* purple-800 */
+    --accent: 252 83% 35%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 147 51 234; /* purple-600 */
-    --input: 147 51 234; /* purple-600 */
-    --ring: 255 255 255; /* white */
+    --border: 252 60% 30%;
+    --input: 252 60% 20%;
+    --ring: 252 83% 58%;
 
-    --sidebar-background: 88 28 135; /* purple-800 */
-    --sidebar-foreground: 255 255 255; /* white */
-    --sidebar-primary: 255 255 255; /* white */
-    --sidebar-primary-foreground: 88 28 135; /* purple-800 */
-    --sidebar-accent: 126 34 206; /* purple-700 */
-    --sidebar-accent-foreground: 255 255 255; /* white */
-    --sidebar-border: 147 51 234; /* purple-600 */
-    --sidebar-ring: 255 255 255; /* white */
+    --sidebar-background: 252 83% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 252 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 252 83% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 252 60% 30%;
+    --sidebar-ring: 252 83% 58%;
   }
 }
 
@@ -100,13 +97,13 @@
 
 @layer components {
   .gov-header {
-    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    background: linear-gradient(135deg, hsl(252 83% 58%), hsl(252 83% 35%));
   }
-  
+
   .certificate-card {
     @apply bg-white rounded-lg shadow-sm border border-purple-600 hover:shadow-md transition-all duration-200 hover:border-purple-800;
   }
-  
+
   .document-icon {
     @apply w-12 h-12 rounded-lg flex items-center justify-center text-purple-800 bg-white font-semibold text-lg;
   }
