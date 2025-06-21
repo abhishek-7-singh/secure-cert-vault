@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -83,7 +82,7 @@ const AdminDashboard = ({ activeTab }: AdminDashboardProps) => {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center space-x-2">
-                <FileText className="h-8 w-8 text-green-600" />
+                <FileText className="h-8 w-8 text-purple-400" />
                 <div>
                   <p className="text-2xl font-bold">5,832</p>
                   <p className="text-sm text-gray-600">Total Documents</p>
@@ -277,7 +276,7 @@ const AdminDashboard = ({ activeTab }: AdminDashboardProps) => {
                       <p className="text-sm text-gray-500">{user.documents} documents</p>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Badge className={user.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}>
+                      <Badge className={user.status === 'active' ? 'bg-purple-100 text-purple-700' : 'bg-yellow-100 text-yellow-800'}>
                         {user.status}
                       </Badge>
                       <Button variant="outline" size="sm">Edit</Button>

@@ -76,7 +76,7 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
   const getTypeColor = (type: string) => {
     const colors: { [key: string]: string } = {
       'Identity Proof': 'bg-purple-100 text-purple-800',
-      'Tax Document': 'bg-green-100 text-green-800',
+      'Tax Document': 'bg-purple-100 text-purple-700',
       'Education': 'bg-indigo-100 text-indigo-800',
       'License': 'bg-orange-100 text-orange-800',
     };
@@ -85,7 +85,7 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
 
   const getStatusColor = (status: string) => {
     const colors: { [key: string]: string } = {
-      'active': 'bg-green-100 text-green-800',
+      'active': 'bg-purple-100 text-purple-700',
       'expired': 'bg-red-100 text-red-800',
       'pending': 'bg-yellow-100 text-yellow-800',
     };
@@ -119,7 +119,7 @@ const UserDashboard = ({ user }: UserDashboardProps) => {
         <Card className="bg-white border-purple-600">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <FileText className="h-8 w-8 text-green-600" />
+              <FileText className="h-8 w-8 text-purple-400" />
               <div>
                 <p className="text-2xl font-bold text-black">{certificates.filter(c => c.status === 'active').length}</p>
                 <p className="text-sm text-gray-600">Active Documents</p>
