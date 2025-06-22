@@ -171,7 +171,6 @@ const AdminDashboard = ({ activeTab }: AdminDashboardProps) => {
       </div>
     );
   }
-
   return (
     <div className="space-y-6">
       <AdminDocuments />
