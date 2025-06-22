@@ -46,7 +46,7 @@ const Index = () => {
             {user.role === 'admin' ? (
               <AdminDashboard activeTab={activeTab} />
             ) : (
-              <UserDashboard user={user} />
+              <UserDashboard user={user} activeTab={activeTab} />
             )}
           </div>
         </main>
